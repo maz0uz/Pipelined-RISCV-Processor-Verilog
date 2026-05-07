@@ -1,0 +1,20 @@
+01: 01_u_type_lui_and_auipc.s -> Tests LUI and AUIPC writeback paths. Matching memory: 01_unified_mem.v
+02: 02_jal_and_jalr_control_flow.s -> Tests JAL/JALR link writeback, target selection, flush, and JALR bit-0 masking. Matching memory: 02_unified_mem.v
+03: 03_all_branch_conditions.s -> Tests BEQ, BNE, BLT, BGE, BLTU, BGEU signed/unsigned behavior and branch flushing. Matching memory: 03_unified_mem.v
+04: 04_r_type_alu_instructions.s -> Tests ADD, SUB, SLL, SLT, SLTU, XOR, SRL, SRA, OR, AND. Matching memory: 04_unified_mem.v
+05: 05_i_type_alu_and_shift_instructions.s -> Tests ADDI, SLTI, SLTIU, XORI, ORI, ANDI, SLLI, SRLI, SRAI. Matching memory: 05_unified_mem.v
+06: 06_loads_and_stores_edge_cases.s -> Tests SB/SH/SW and LB/LH/LW/LBU/LHU with sign and zero extension. Matching memory: 06_unified_mem.v
+07: 07_alu_forwarding_chain.s -> Tests EX/MEM and MEM/WB forwarding for back-to-back ALU dependencies. Matching memory: 07_unified_mem.v
+08: 08_load_use_stall.s -> Tests load-use hazard detection, PC/IF_ID stall, and bubble insertion. Matching memory: 08_unified_mem.v
+09: 09_store_data_forwarding.s -> Tests forwarding of a just-produced register value into store write data. Matching memory: 09_unified_mem.v
+10: 10_id_stage_branch_alu_forwarding.s -> Tests branch compare using forwarded operands from recent ALU instructions. Matching memory: 10_unified_mem.v
+11: 11_id_stage_branch_load_hazard.s -> Tests extra stall for branch/JALR depending on a load result. Matching memory: 11_unified_mem.v
+12: 12_x0_hardwired_zero.s -> Tests that writes to x0 are ignored and reads from x0 return zero. Matching memory: 12_unified_mem.v
+13: 13_jalr_target_bit_zero_masking.s -> Tests JALR target masking and wrong-path flush. Matching memory: 13_unified_mem.v
+14: 14_ecall_halt.s -> Tests ECALL as project-defined halt instruction. Matching memory: 14_unified_mem.v
+15: 15_ebreak_halt.s -> Tests EBREAK as project-defined halt instruction. Matching memory: 15_unified_mem.v
+16: 16_fence_halt.s -> Tests FENCE as project-defined halt instruction. Matching memory: 16_unified_mem.v
+17: 17_fence_tso_halt.s -> Tests FENCE.TSO as project-defined halt instruction. Matching memory: 17_unified_mem.v
+18: 18_pause_halt.s -> Tests PAUSE as project-defined halt instruction. Matching memory: 18_unified_mem.v
+19: 19_mixed_datapath_stress.s -> Integration test for ALU, memory, forwarding, branch, flush, and writeback. Matching memory: 19_unified_mem.v
+20: 20_signed_vs_unsigned_edge_cases.s -> Tests signed/unsigned comparison edge cases for SLT/SLTU and BLTU. Matching memory: 20_unified_mem.v

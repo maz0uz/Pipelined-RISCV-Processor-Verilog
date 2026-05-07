@@ -1,0 +1,40 @@
+April 19: Started Milestone 3 pipeline conversion
+	Helped divide the old single-cycle datapath into IF/ID, ID/EX, EX/MEM, and MEM/WB pipeline sections
+	Started listing which signals needed to be carried through each pipeline register
+	Helped begin the conversion from single-cycle execution to the C0/C1 pipelined timing model
+
+April 20: Worked on unified memory integration and pipeline timing
+	Helped replace the separate instruction/data memory design with one single-port byte-addressable unified memory
+	Worked on the C0/C1 phase schedule so instruction fetch happens on C0 and data memory access happens on C1
+	Checked that the unified memory interface matched the top-level riscv module
+
+April 21: Worked on pipeline debugging and control signal cleanup
+	Helped debug pipeline register widths and signal ordering
+	Checked control signal propagation through ID/EX, EX/MEM, and MEM/WB
+	Helped fix writeback selection for ALU results, memory data, PC+4, and immediate values
+
+April 22: Worked on hazard testing and forwarding verification
+	Helped test EX-stage forwarding for back-to-back ALU instructions
+	Checked forwarding behavior from EX/MEM and MEM/WB into the ALU operand muxes
+	Helped debug store-data forwarding and load-use stall behavior in simulation
+
+April 23: Started implementing the test generator bonus
+	Created the first version of the C++ random RV32I test program generator
+	Added instruction encoders for R-type, I-type, S-type, B-type, U-type, and J-type formats
+	Added output generation for program.hex and trace.txt
+
+April 24: Continued working on the test generator bonus
+	Added support for load and store instruction generation
+	Added byte and halfword memory modeling for LB, LH, LBU, LHU, SB, and SH
+	Added data.hex generation for unified memory testing
+	Fixed random register tracking so generated programs use known register values
+
+April 25: Improved final testing and generator coverage
+	Added instruction categories for branches, upper-immediate instructions, shift-immediate instructions, and halt/fence encodings
+	Created directed assembly tests and matching unified memory files for instruction and hazard validation
+	Verified passing simulation outputs for JAL/JALR and hazard tests
+
+April 26: Final cleanup and submission preparation
+	Cleaned the test generator files and test package organization
+	Reviewed the final report sections related to testing and the test generator bonus
+	Prepared README notes explaining how to run directed tests and generated test programs

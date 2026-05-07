@@ -1,0 +1,38 @@
+April 19: Started Milestone 3 pipeline implementation
+	Helped add IF/ID, ID/EX, EX/MEM, and MEM/WB pipeline registers
+	Worked on converting the Milestone 2 control and datapath signals into the pipelined design
+	Helped begin the C0/C1 phase-based pipeline implementation
+
+April 20: Worked on single-port memory scheduling and top-level integration
+	Helped connect the unified memory to the processor datapath
+	Checked the memory address selection between PC on C0 and EX/MEM ALU address on C1
+	Helped verify that structural hazards were avoided by every-other-cycle instruction issuing
+
+April 21: Worked on datapath cleanup and writeback fixes
+	Helped clean inconsistent top-level signal names
+	Debugged pipeline register connections and control signal bit positions
+	Helped fix JAL/JALR writeback so PC+4 is written to the destination register
+
+April 22: Worked on forwarding and stalling logic
+	Connected the ForwardingUnit to the ALU input muxes
+	Helped add inline load-use hazard detection without creating a separate hazard module
+	Debugged PC and IF/ID stalling with bubble insertion into ID/EX
+
+April 23: Started the ID-stage branch resolution bonus
+	Moved branch comparison from the EX-stage ALU flags to the ID stage
+	Added ID-stage branch target calculation using IF_ID_PC and the generated immediate
+	Added ID-stage JAL and JALR target selection logic
+
+April 24: Continued the ID-stage branch resolution bonus
+	Added forwarding into the ID-stage branch comparator
+	Added forwarding into the ID-stage JALR target calculation path
+	Added JALR target bit-zero masking in the ID-stage target path
+
+April 25: Finished branch hazard handling for the bonus feature
+	Added branch-load hazard detection and stalling for branches depending on load results
+	Debugged branch flushing and PC redirection behavior
+	Verified branch tests for BEQ, BNE, BLT, BGE, BLTU, and BGEU
+
+April 26: Final Verilog
+	Reviewed the final pipelined datapath diagram and branch-resolution description
+	Prepared implementation notes for the report about ID-stage branch resolution and hazard handling
